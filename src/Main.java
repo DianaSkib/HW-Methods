@@ -11,6 +11,16 @@ public class Main {
         recommendAppVersion(1, 2016); //   task 2
         recommendAppVersion(0, 2030); //   task 2
         recommendAppVersion(2, 2020); //   task 2
+
+        // task 3
+        int deliveryDistance = 95;
+        int days = calculateDeliveryDays(deliveryDistance);
+        if (days == -1) {
+            System.out.println("Доставка невозможна");
+        } else {
+            System.out.println("Потребуется дней: " + days);
+        }
+        // task 3 //
     }
 
     public static void printLeapYearResult(int year) {
@@ -49,5 +59,19 @@ public class Main {
         }
 
         System.out.println(message);
+    }
+
+    // task 3
+    public static int calculateDeliveryDays(int distance) {
+        if (distance > 100) {
+            return -1;
+        }
+        int days = 1;
+        if (distance > 20 && distance <= 60) {
+            days += 1;
+        } else if (distance > 60 && distance <= 100) {
+            days += 2;
+        }
+        return days;
     }
 }
